@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout</title>
+</head>
+<body>
+    <h1>Practicing for exams!!</h1>
+
+    <button id="stop">Stop</button>
+
+</body>
+
+<script>
+    const myset = function(){
+        console.log("Hello World!!");
+    }
+    setTimeout(myset, 2000);
+    //even if the timeout is 0 then also the execution will be on hole asit will be sent to task queue 
+
+    const changetxt = function(){
+        document.querySelector('h1').innerHTML = "All the best for Exam "
+    }
+    const pause = setTimeout(changetxt,3000)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(pause)
+        console.log("STOPPED")
+    })
+    console.log("this is after timeout");
+</script>
+</html>
